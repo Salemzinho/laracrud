@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers;
+use App\Http\Controllers\ProdutosController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cadastro-produto', [ProdutosController::class, 'create']);
+Route::post('/cadastro-produto', [ProdutosController::class, 'store'])->name('registrar_produto');
