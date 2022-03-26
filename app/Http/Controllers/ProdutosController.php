@@ -34,6 +34,12 @@ class ProdutosController extends Controller
         return view('editar', ['produto' => $produto]);
     }
 
+    public function delete($id){
+        $produto = Produto::findOrFail($id);
+
+        return view('delete', ['produto' => $produto]);
+    }
+
     public function update(Request $request, $id){
         $produto = Produto::findOrFail($id);
 
@@ -45,5 +51,18 @@ class ProdutosController extends Controller
         ]);
 
         return "Produto Atualizado";
+    }
+
+    public function destroy($id){
+        $produto = Produto::findOrFail($id);
+        $produto->delete();
+
+        return "Produto Excluido";
+    }
+
+    public function painel($id){
+        $produto = Produto::findOrFail($id);
+
+        return view('painel-produtos', ['produto' => $produto]);
     }
 }
