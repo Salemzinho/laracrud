@@ -12,18 +12,20 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <style>*{font-family: 'Montserrat';}</style>
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Fonts -->  
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand me-2 mt-1" href="/">
-                    <h4 class="text-muted"><b style="color: #ef3b2d">Lara</b>CRUD</h4>
+                    <h4 class="text-muted"><b>Lara</b>CRUD</h4>
                 </a> 
                 
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,16 +53,16 @@
         <br><br>
 
         <div class="container">
-            <form action="{{ route('registrar_produto') }}" method="POST">
+            <form action="{{ route('alterar_produto', ['id' => $produto->id]) }}" method="POST">
                 @csrf
                 <label for="">Nome</label> <br>
-                <input type="text" name="nome" class="form-control"> <br>
+                <input type="text" name="nome" class="form-control" value="{{ $produto->nome }}"> <br>
 
                 <label for="">Preço</label> <br>
-                <input type="text" name="preco" class="form-control"> <br>
+                <input type="text" name="preco" class="form-control" value="{{ $produto->preco }}"> <br>
 
                 <label for="">Quantidade</label> <br>
-                <input type="text" name="quantidade" class="form-control"> <br>
+                <input type="text" name="quantidade" class="form-control" value="{{ $produto->quantidade }}"> <br>
 
                 <button class="btn btn-success">Enviar</button>
             </form>

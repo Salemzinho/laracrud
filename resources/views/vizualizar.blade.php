@@ -53,7 +53,7 @@
         <br><br>
 
         <div class="container">
-            <form action="{{ route('registrar_produto') }}" method="POST">
+            <form action="" method="POST">
                 @csrf
                 <label for="">Nome</label> <br>
                 <input type="text" name="nome" class="form-control" value="{{ $produto->nome }}"> <br>

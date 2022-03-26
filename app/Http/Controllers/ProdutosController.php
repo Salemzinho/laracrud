@@ -27,4 +27,23 @@ class ProdutosController extends Controller
 
         return view('vizualizar', ['produto' => $produto]);
     }
+
+    public function editar($id){
+        $produto = Produto::findOrFail($id);
+
+        return view('editar', ['produto' => $produto]);
+    }
+
+    public function update(Request $request, $id){
+        $produto = Produto::findOrFail($id);
+
+        $produto->update([
+            'nome' => $request->nome,
+            'custo' => $request->custo,
+            'preco' => $request->preco,
+            'quantidade' => $request->quantidade,
+        ]);
+
+        return "Produto Atualizado";
+    }
 }
