@@ -56,13 +56,13 @@
             <form action="{{ route('registrar_produto') }}" method="POST">
                 @csrf
                 <label for="">Nome</label> <br>
-                <input type="text" name="nome" class="form-control"> <br>
+                <input type="text" name="nome" class="form-control" value="{{ $produto->nome }}"> <br>
 
                 <label for="">Preço</label> <br>
-                <input type="text" name="preco" class="form-control"> <br>
+                <input type="text" name="preco" class="form-control" value="{{ $produto->preco }}"> <br>
 
                 <label for="">Quantidade</label> <br>
-                <input type="text" name="quantidade" class="form-control"> <br>
+                <input type="text" name="quantidade" class="form-control" value="{{ $produto->quantidade }}"> <br>
 
                 <button class="btn btn-success">Enviar</button>
             </form>

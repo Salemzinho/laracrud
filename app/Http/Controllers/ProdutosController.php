@@ -7,7 +7,7 @@ use App\Models\Produto;
 
 class ProdutosController extends Controller
 {
-    public function create(){
+    public function cadastrarProduto(){
         return view('cadastro-produto');
     }   
 
@@ -20,5 +20,11 @@ class ProdutosController extends Controller
         ]);
 
         return "Cadastrado!";
+    }
+    
+    public function vizualizar($id){
+        $produto = Produto::findOrFail($id);
+
+        return view('vizualizar', ['produto' => $produto]);
     }
 }

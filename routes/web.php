@@ -21,5 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cadastro-produto', [ProdutosController::class, 'create']);
+Route::get('/cadastro-produto', [ProdutosController::class, 'cadastrarProduto']);
 Route::post('/cadastro-produto', [ProdutosController::class, 'store'])->name('registrar_produto');
+Route::get('/produto/vizualizar/{id}', [ProdutosController::class, 'vizualizar']);
