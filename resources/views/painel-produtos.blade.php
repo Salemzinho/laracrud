@@ -54,47 +54,30 @@
 
         <div class="container">
             <form action="" method="POST">
+@foreach ($produtos as $produto)
                 @csrf
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">{{ $produto->id }}</th>
-      <th scope="col">{{ $produto->nome }}</th>
-      <th scope="col">{{ $produto->preco }}</th>
-      <th scope="col">{{ $produto->quantidade }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-                <label for="">Nome</label> <br>
-                <input type="text" name="nome" class="form-control" value="{{ $produto->nome }}"> <br>
+                <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Preco</th>
+                    <th scope="col">Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ $produto->id }}</th>
+                            <td>{{ $produto->nome }}</td>
+                            <td>{{ $produto->preco }}</td>
+                            <td>{{ $produto->quantidade }}</td>
+                        </th>
+                    </tr>
+                    <tr>
 
-                <label for="">Preço</label> <br>
-                <input type="text" name="preco" class="form-control" value="{{ $produto->preco }}"> <br>
-
-                <label for="">Quantidade</label> <br>
-                <input type="text" name="quantidade" class="form-control" value="{{ $produto->quantidade }}"> <br>
-
-                <button class="btn btn-success">Enviar</button>
+                </tbody>
+                </table>
+@endforeach
             </form>
         </div>
     </body>

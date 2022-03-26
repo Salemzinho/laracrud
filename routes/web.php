@@ -28,4 +28,4 @@ Route::get('/produto/editar/{id}', [ProdutosController::class, 'editar']);
 Route::post('/produto/editar/{id}', [ProdutosController::class, 'update'])->name('alterar_produto');
 Route::get('/produto/deletar/{id}', [ProdutosController::class, 'delete']);
 Route::post('/produto/deletar/{id}', [ProdutosController::class, 'destroy'])->name('excluir_produto');
-Route::get('/painel-produtos', [ProdutosController::class, 'painel']);
+Route::get('/painel-produtos/{id}', [ProdutosController::class, 'painel']);

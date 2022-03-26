@@ -18,6 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
@@ -33,14 +34,14 @@
                 <div class="collapse navbar-collapse" id="navbarButtonsExample">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
                     <div class="d-flex align-items-center">
-                        <a href="/sobre-nos.php">
-                            <button type="button" class="btn btn-link px-3 me-2">
+                        <a href="">
+                            <button type="button" class="btn btn-link text-dark px-3 me-2 text-decoration-none">
                                 Menu
                             </button>
                         </a>
-                        <a href="/apoie-os-criadores.php">
-                            <button type="button" class="btn btn-primary me-3">
-                                Menu
+                        <a href="/cadastro-produto">
+                            <button type="button" class="btn btn-outline-danger me-3">
+                                Cadastro de Produtos
                             </button>
                         </a>
                         <a class="btn btn-dark px-3" href="https://github.com/Salemzinho" role="button"><i class="fab fa-github"></i></a>
@@ -51,19 +52,37 @@
         <br><br>
 
         <div class="container">
-            <form action="{{ route('registrar_produto') }}" method="POST">
-                @csrf
-                <label for="">Nome</label> <br>
-                <input type="text" name="nome" class="form-control"> <br>
+            <div class="row">
+                <div class="col col-6">     
+                    <div class="p-3">
+                        <h2>Cadastre seu Produto!</h2>
+                        <hr>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ullam voluptatibus 
+                        tempore laboriosam sunt quaerat illum a, optio natus repudiandae?</p>
+                    </div>
+                </div>
+                <div class="col col-6 border rounded p-4">
+                    <form action="{{ route('registrar_produto') }}" method="POST">
+                        @csrf
+                        <label for="">Nome</label> <br>
+                        <input type="text" name="nome" class="form-control"> <br>
 
-                <label for="">Preço</label> <br>
-                <input type="text" name="preco" class="form-control"> <br>
+                        <label for="">Preço</label> <br>
+                        <input type="text" name="preco" class="form-control"> <br>
 
-                <label for="">Quantidade</label> <br>
-                <input type="text" name="quantidade" class="form-control"> <br>
+                        <label for="">Quantidade</label> <br>
+                        <input type="text" name="quantidade" class="form-control"> <br>
 
-                <button class="btn btn-success">Enviar</button>
-            </form>
+                        <button class="btn btn-outline-danger">Enviar</button>
+                    </form>
+                </div>
+            </div>
         </div>
+    <br><br> <br>
+        <footer>
+            <div class="bg-dark p-5">
+                <p class="text-center text-muted">Teste copyright</p>
+            </div>
+        </footer>
     </body>
 </html>
