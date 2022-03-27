@@ -20,13 +20,7 @@ class ProdutosController extends Controller
             'quantidade' => $request->quantidade,
         ]);
 
-        return "Cadastrado!";
-    }
-    
-    public function vizualizar($id){
-        $produto = Produto::findOrFail($id);
-
-        return view('vizualizar', ['produto' => $produto]);
+        return view ('cadastro-produto');
     }
 
     public function editar($id){
@@ -38,7 +32,7 @@ class ProdutosController extends Controller
     public function delete($id){
         $produto = Produto::findOrFail($id);
 
-        return view('delete', ['produto' => $produto]);
+        return view('deletar', ['produto' => $produto]);
     }
 
     public function update(Request $request, $id){
@@ -51,19 +45,23 @@ class ProdutosController extends Controller
             'quantidade' => $request->quantidade,
         ]);
 
-        return "Produto Atualizado";
+        $produto = Produto::get();
+
+        return view('painel-produto', ['produto' => $produto]);
     }
 
     public function destroy($id){
         $produto = Produto::findOrFail($id);
         $produto->delete();
 
-        return "Produto Excluido";
+        $produto = Produto::get();
+
+        return view ('painel-produto', ['produto' => $produto]);
     }
 
     public function painel(){
         $produto = Produto::get();
 
-        return view('painel-produtos', ['produto' => $produto]) ;
+        return view('painel-produto', ['produto' => $produto]) ;
     }
 }

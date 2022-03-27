@@ -21,11 +21,18 @@ Route::get('/', function () {
     return view('cadastro-produto');
 });
 
+// CRUD - Create    
 Route::get('/cadastro-produto', [ProdutosController::class, 'cadastrarProduto']);
-Route::post('/cadastro-produto', [ProdutosController::class, 'store'])->name('registrar_produto');
-Route::get('/produto/vizualizar/{id}', [ProdutosController::class, 'vizualizar']);
+Route::post('/cadastro-produto/sucesso', [ProdutosController::class, 'store']);
+
+// CRUD - Read
+Route::get('/painel-produto', [ProdutosController::class, 'painel']);
+
+// CRUD - Update
 Route::get('/produto/editar/{id}', [ProdutosController::class, 'editar']);
-Route::post('/produto/editar/{id}', [ProdutosController::class, 'update'])->name('alterar_produto');
+Route::post('/painel-produto/{id}/editado', [ProdutosController::class, 'update']);
+
+// CRUD - Delete
 Route::get('/produto/deletar/{id}', [ProdutosController::class, 'delete']);
-Route::post('/produto/deletar/{id}', [ProdutosController::class, 'destroy'])->name('excluir_produto');
-Route::get('/painel-produtos', [ProdutosController::class, 'painel']);
+Route::post('/painel-produto/{id}/excluido', [ProdutosController::class, 'destroy']);
+
