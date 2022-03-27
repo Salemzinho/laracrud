@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use Illuminate\Support\Facades\DB;
 
 class ProdutosController extends Controller
 {
@@ -60,9 +61,9 @@ class ProdutosController extends Controller
         return "Produto Excluido";
     }
 
-    public function painel($id){
-        $produto = Produto::findOrFail($id);
+    public function painel(){
+        $produto = Produto::get();
 
-        return view('painel-produtos', ['produto' => $produto]);
+        return view('painel-produtos', ['produto' => $produto]) ;
     }
 }

@@ -54,30 +54,28 @@
 
         <div class="container">
             <form action="" method="POST">
-@foreach ($produtos as $produto)
+
                 @csrf
                 <table class="table">
-                <thead>
-                    <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Preco</th>
-                    <th scope="col">Quantidade</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">{{ $produto->id }}</th>
-                            <td>{{ $produto->nome }}</td>
-                            <td>{{ $produto->preco }}</td>
-                            <td>{{ $produto->quantidade }}</td>
-                        </th>
-                    </tr>
-                    <tr>
-
-                </tbody>
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Preco</th>
+                        <th scope="col">Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($produto as $produtos)
+                            <th scope="row">{{ $produtos->id }}</th>
+                                <td>{{ $produtos->nome }}</td>
+                                <td>{{ $produtos->preco }}</td>
+                                <td>{{ $produtos->quantidade }}</td>
+                            </th>
+                        </tr>
+                        @endforeach
+                    </tbody>
                 </table>
-@endforeach
             </form>
         </div>
     </body>

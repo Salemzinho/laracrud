@@ -49,19 +49,18 @@
                 </div>
             </div>
         </nav>
-        <br><br>
 
         <div class="container">
-            <div class="row">
-                <div class="col col-6">     
-                    <div class="p-3">
-                        <h2>Cadastre seu Produto!</h2>
+            <div class="row justify-content-between mt-5">
+                <div class="col col-lg-5 col-sm-12">     
+                    <div class="p-0">
+                        <h2>Cadastre seu produto!</h2>
                         <hr>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ullam voluptatibus 
                         tempore laboriosam sunt quaerat illum a, optio natus repudiandae?</p>
                     </div>
                 </div>
-                <div class="col col-6 border rounded p-4">
+                <div class="col col-lg-6 col-sm-12 border rounded p-4">
                     <form action="{{ route('registrar_produto') }}" method="POST">
                         @csrf
                         <label for="">Nome</label> <br>
@@ -73,7 +72,7 @@
                         <label for="">Quantidade</label> <br>
                         <input type="text" name="quantidade" class="form-control"> <br>
 
-                        <button class="btn btn-outline-danger">Enviar</button>
+                        <button class="btn btn-outline-danger col-12 mt-5">Enviar</button>
                     </form>
                 </div>
             </div>
