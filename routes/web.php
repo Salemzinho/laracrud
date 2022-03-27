@@ -18,12 +18,12 @@ use App\Http\Controllers\ProdutosController;
 */
 
 Route::get('/', function () {
-    return view('cadastro-produto');
+    return view('welcome');
 });
 
 // CRUD - Create    
 Route::get('/cadastro-produto', [ProdutosController::class, 'cadastrarProduto']);
-Route::post('/cadastro-produto/sucesso', [ProdutosController::class, 'store']);
+Route::post('/cadastro-produto/sucesso', [ProdutosController::class, 'store'])->name('sucesso');
 
 // CRUD - Read
 Route::get('/painel-produto', [ProdutosController::class, 'painel']);

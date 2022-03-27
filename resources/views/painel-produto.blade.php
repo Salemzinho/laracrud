@@ -26,40 +26,47 @@
         <div class="container"> 
             <div class="p-0 mt-5">
                 <h2>Painel de Produtos</h2>
+                <hr>
             </div>
             <br><br>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Preco</th>
-                        <th scope="col">Quantidade</th>
-                        <th scope="col">Editar</th>
-                        <th scope="col">Excluir</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($produto as $produtos)
-                        <th scope="row">{{ $produtos->id }}</th>
-                            <td>{{ $produtos->nome }}</td>
-                            <td>{{ $produtos->preco }}</td>
-                            <td>{{ $produtos->quantidade }}</td>
-                            <td>   
-                                <a href="/produto/editar/{{$produtos->id}}">
-                                    <button class="btn btn-outline-primary">Editar</button>
-                                </a>
-                            </td>
-                            <td>   
-                                <a href="/produto/deletar/{{$produtos->id}}">
-                                    <button class="btn btn-outline-danger">Excluir</button>
-                                </a>
-                            </td>
-                        </th>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <div class="table-responsive-lg">
+                <table class="table table-hover mb-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Preco</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        @foreach ($produto as $produtos)
+                            <th scope="row">{{ $produtos->id }}</th>
+                                <td>{{ $produtos->nome }}</td>
+                                <td>{{ $produtos->preco }}</td>
+                                <td>{{ $produtos->quantidade }}</td>
+                                <td>   
+                                    <a href="/produto/editar/{{$produtos->id}}">
+                                        <button class="btn btn-outline-primary">Editar</button>
+                                    </a>
+                                </td>
+                                <td>   
+                                    <a href="/produto/deletar/{{$produtos->id}}">
+                                        <button class="btn btn-outline-danger">Excluir</button>
+                                    </a>
+                                </td>
+                            </th>   
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+        <br>
+
+        @include('includes.footer')
     </body>
 </html>

@@ -25,7 +25,7 @@
 
         <div class="container">
             <div class="row justify-content-between mt-5 mb-5">
-                <div class="col col-lg-5 col-sm-12 ">     
+                <div class="col col-lg-5 col-sm-12">     
                     <div class="p-0">
                         <h2>Cadastre seu produto!</h2>
                         <hr>
@@ -45,17 +45,20 @@
                         <label for="">Quantidade</label> <br>
                         <input type="text" name="quantidade" class="form-control"> <br>
 
+                        @if(Route::is('sucesso') )
+                        <div class="alert alert-success">
+                            <strong>Produto</strong> cadastrado com sucesso!
+                        </div>
+                        @endif
+
                         <button class="btn btn-outline-danger col-12 mt-5">Enviar</button>
                     </form>
                 </div>
             </div>
         </div>
     
-        <footer class="bg-dark text-center text-lg-start shadow-sm">
-            <div class="text-center p-5 text-light">
-                © 2022 Copyright:
-                <a class="text-light font-weight-bold" href="#">LaraCRUD</a>
-            </div>
-        </footer>
+        <br>
+
+        @include('includes.footer')
     </body>
 </html>

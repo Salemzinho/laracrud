@@ -24,7 +24,7 @@
         @include('includes.navbar')
 
         <div class="container">
-            <div class="row justify-content-between mt-5">
+            <div class="row justify-content-between mt-5 mb-5">
                 <div class="col col-lg-5 col-sm-12">     
                     <div class="p-0">
                     <h2>Edite seu produto!</h2>
@@ -48,6 +48,11 @@
                     <button class="btn btn-outline-danger col-12 mt-5">Enviar</button>
                 </form>
             </div>
+            </div>
         </div>
+
+        <br>
+
+        @include('includes.footer')
     </body>
 </html>

@@ -25,25 +25,30 @@
 
 
         <div class="container">
-            <div class="row justify-content-between mt-5">
+            <div class="row justify-content-between mt-5 mb-5">
                 <div class="col col-lg-5 col-sm-12">     
                     <div class="p-0">
-                    <h2>Exclua seu produto!</h2>
-                    <hr>
-                    <p class="mt-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ullam voluptatibus 
-                    tempore laboriosam sunt quaerat illum a, optio natus repudiandae?</p>
+                        <h2>Exclua seu produto!</h2>
+                        <hr>
+                        <p class="mt-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ullam voluptatibus 
+                        tempore laboriosam sunt quaerat illum a, optio natus repudiandae?</p>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-sm-12 border rounded p-4">
+                    <form action="/painel-produto/{{$produto->id}}/excluido" method="POST">
+                        @csrf
+                        <label for=""><b>EI, CUIDADO!</b> <br><br>
+                        Gostaria de excluir o produto?</label> <br><br>
+                        <input type="text" name="nome" class="form-control" value="{{ $produto->nome }}"> <br>
+
+                        <button class="btn btn-outline-danger col-12 mt-5">Sim</button>
+                    </form>
                 </div>
             </div>
-            <div class="col col-lg-6 col-sm-12 border rounded p-4">
-                <form action="/painel-produto/{{$produto->id}}/excluido" method="POST">
-                    @csrf
-                    <label for=""><b>EI, CUIDADO!</b> <br><br>
-                    Gostaria de excluir o produto?</label> <br><br>
-                    <input type="text" name="nome" class="form-control" value="{{ $produto->nome }}"> <br>
-
-                    <button class="btn btn-outline-danger col-12 mt-5">Sim</button>
-                </form>
-            </div>
         </div>
+
+        <br>
+
+        @include('includes.footer')
     </body>
 </html>
