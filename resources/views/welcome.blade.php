@@ -21,7 +21,7 @@
 
     </head>
     <body>
-        @include('includes.navbar')
+        @include('includes.navbar-welcome')
 
         <div class="container">
             <div class="row">

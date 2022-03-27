@@ -31,6 +31,17 @@
             <br><br>
             <div class="table-responsive-lg">
                 <table class="table table-hover mb-5">
+                    @if(Route::is('excluido') )
+                        <div class="alert alert-danger">
+                            <strong>Produto</strong> excluido com sucesso!
+                        </div>
+                    @endif
+
+                    @if(Route::is('editado') )
+                        <div class="alert alert-primary">
+                            <strong>Produto</strong> editado com sucesso!
+                        </div>
+                    @endif
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -41,7 +52,7 @@
                             <th scope="col">Excluir</th>
                         </tr>
                     </thead>
-                    <tbody >
+                    <tbody>
                         @foreach ($produto as $produtos)
                             <th scope="row">{{ $produtos->id }}</th>
                                 <td>{{ $produtos->nome }}</td>
