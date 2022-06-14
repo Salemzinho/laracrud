@@ -6,7 +6,6 @@
 
         <title>Laravel</title>
 
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -17,7 +16,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
 
     </head>
     <body>
@@ -46,9 +44,9 @@
                         <input type="text" name="quantidade" class="form-control"> <br>
 
                         @if(Route::is('sucesso') )
-                        <div class="alert alert-success">
-                            <strong>Produto</strong> cadastrado com sucesso!
-                        </div>
+                            <div class="alert alert-success">
+                                <strong>Produto</strong> cadastrado com sucesso!
+                            </div>
                         @endif
 
                         <button class="btn btn-outline-danger col-12 mt-5">Enviar</button>

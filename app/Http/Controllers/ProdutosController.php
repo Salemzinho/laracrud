@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class ProdutosController extends Controller
 {
-    public function cadastrarProduto(){
+    public function cadastrarProduto()
+    {
         return view('cadastro-produto');
     }   
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         Produto::create([
             'nome' => $request->nome,
             'custo' => $request->custo,
@@ -20,22 +22,33 @@ class ProdutosController extends Controller
             'quantidade' => $request->quantidade,
         ]);
 
-        return view ('cadastro-produto');
+        return view('cadastro-produto');
     }
 
-    public function editar($id){
+    public function editar($id)
+    {
         $produto = Produto::findOrFail($id);
 
-        return view('editar', ['produto' => $produto]);
+        $parameters = [
+        'produto' => $produto
+        ];
+
+        return view('editar', $parameters);
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $produto = Produto::findOrFail($id);
 
-        return view('deletar', ['produto' => $produto]);
+        $parameters = [
+        'produto' => $produto
+        ];
+
+        return view('deletar', $parameters);
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $produto = Produto::findOrFail($id);
 
         $produto->update([
@@ -47,21 +60,35 @@ class ProdutosController extends Controller
 
         $produto = Produto::get();
 
-        return view('painel-produto', ['produto' => $produto]);
+        $parameters = [
+        'produto' => $produto
+        ];
+
+        return view('painel-produto', $parameters);
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $produto = Produto::findOrFail($id);
         $produto->delete();
 
         $produto = Produto::get();
 
-        return view ('painel-produto', ['produto' => $produto]);
+        $parameters = [
+        'produto' => $produto
+        ];
+
+        return view ('painel-produto', $parameters);
     }
 
-    public function painel(){
+    public function painel()
+    {
         $produto = Produto::get();
 
-        return view('painel-produto', ['produto' => $produto]) ;
+        $parameters = [
+        'produto' => $produto
+        ];
+
+        return view('painel-produto', $parameters) ;
     }
 }
